@@ -15,6 +15,8 @@ public class StudentEntity {
     private String batch_name;
     private  String buddy_id;
 
+
+
     /**
      * @param id
      * @param firstName
