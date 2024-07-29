@@ -1,9 +1,6 @@
 package streams;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -83,7 +80,19 @@ public class MyStream {
         numbers.add(8);
         numbers.add(9);
         numbers.add(10);
+        numbers.add(5);
+        numbers.add(6);
+        numbers.add(7);
+        numbers.add(8);
+        numbers.add(9);
+        numbers.add(10);
         numbers.add(11);
+        numbers.add(11);
+        numbers.add(11);
+        numbers.add(11);
+        numbers.add(12);
+        numbers.add(13);
+        numbers.add(14);
         numbers.add(12);
         numbers.add(13);
         numbers.add(14);
@@ -92,7 +101,9 @@ public class MyStream {
 
         // for min and max use optional<t> return type so use optional type only
      Optional<Integer> n =  numbers.stream().min((h, x) -> (h-x));
-     System.out.println(n);
+     int n3 =  numbers.stream().min((h, x) -> (h-x)).get();
+     int hhj = n.get();
+     System.out.println(n +" "+ hhj+" "+ n3);
 
         Integer i = numbers.stream().limit(10).reduce(0, (a,b) -> a + b);
         System.out.println(i);
@@ -106,7 +117,15 @@ public class MyStream {
 
         List<String> list = employees.stream().filter(a -> a.getName().startsWith("b")).map(b -> b.getName()).collect(Collectors.toList());
 
-        list.stream().forEach(System.out::println);
+        List<Integer> list1 = employees.stream().map(a-> a.getAge()/2).collect(Collectors.toList());
+
+        // distinct
+        List<Integer> nums = numbers.stream().distinct().collect(Collectors.toList());
+
+        boolean bb = numbers.stream().noneMatch(nee -> nee < 1);
+        int fin = numbers.stream().findAny().get();
+        System.out.println(fin);
+        nums.stream().forEach(System.out::println);
 
         HashMap<String, Integer> map = new HashMap<>();
         map.put("yogi", 5);
