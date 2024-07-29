@@ -24,4 +24,13 @@ public class Eagle extends Bird {
     // Functional Interface
     Swimable swimable = () -> {swimBe.amISwim();};
 
+
+    public void fly() {
+        flyable.fly();
+    }
+
+    public void swim() {
+        swimable.swim();
+    }
+
 }

@@ -8,6 +8,6 @@ public class Client {
     public static void main(String[] args) {
 
         Eagle eagle = new Eagle(new FlyHigh());
-       // eagle.fly();
+        eagle.fly();
     }
 }
